@@ -17,9 +17,8 @@ class ViewController: UIViewController {
     
     private var count = 0 {
         didSet {
-            if count < 0 {
-                self.count = 0
-            }
+            count = max(count, 0)
+            updateCounterLabel()
         }
     }
     
@@ -34,10 +33,14 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         plusButton.tintColor = .red
         minusButtom.tintColor = .blue
-        resetButton.tintColor = .orange
+        resetButton.tintColor = .black
         history.isEditable = false
         history.isSelectable = true
         history.text = "История изменений: \n"
+        history.layer.cornerRadius = 15
+        history.layer.masksToBounds = true
+        counterValue.layer.cornerRadius = 15
+        counterValue.layer.masksToBounds = true
     }
     
     private func updateCounterLabel() {
@@ -73,6 +76,5 @@ class ViewController: UIViewController {
         count = 0
         logEvent("Значение счетчика сброшено")
     }
-    
 }
 
