@@ -9,11 +9,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var counterValue: UILabel!
+    @IBOutlet weak var counterLabel: UILabel!
     @IBOutlet weak var plusButton: UIButton!
-    @IBOutlet weak var minusButtom: UIButton!
+    @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
-    @IBOutlet weak var history: UITextView!
+    @IBOutlet weak var historyTextView: UITextView!
     
     private var count = 0 {
         didSet {
@@ -30,31 +30,31 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
         plusButton.tintColor = .red
-        minusButtom.tintColor = .blue
+        minusButton.tintColor = .blue
         resetButton.tintColor = .black
-        history.isEditable = false
-        history.isSelectable = true
-        history.text = "История изменений: \n"
-        history.layer.cornerRadius = 15
-        history.layer.masksToBounds = true
-        counterValue.layer.cornerRadius = 15
-        counterValue.layer.masksToBounds = true
+        historyTextView.isEditable = false
+        historyTextView.isSelectable = true
+        historyTextView.text = "История изменений: \n"
+        historyTextView.layer.cornerRadius = 15
+        historyTextView.layer.masksToBounds = true
+        counterLabel.layer.cornerRadius = 15
+        counterLabel.layer.masksToBounds = true
     }
     
     private func updateCounterLabel() {
-        counterValue.text = "Значение счетчика: \(count)"
+        counterLabel.text = "Значение счетчика: \(count)"
     }
     
     private func scrolling() {
-        let range = NSRange(location: history.text.count - 1, length: 1)
-        history.scrollRangeToVisible(range)
+        let range = NSRange(location: historyTextView.text.count - 1, length: 1)
+        historyTextView.scrollRangeToVisible(range)
     }
         
     private func logEvent(_ message: String) {
         let dateString = dateFormatter.string(from: Date())
-        history.text += "[\(dateString)] : \(message)\n"
+        historyTextView.text += "[\(dateString)] : \(message)\n"
         scrolling()
     }
 

@@ -72,9 +72,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
-                        <outlet property="counterValue" destination="ULd-dT-RtR" id="8Qn-oZ-8PB"/>
-                        <outlet property="history" destination="9f2-S9-WmE" id="Y3V-TX-Xg0"/>
-                        <outlet property="minusButtom" destination="Mvd-U5-O0b" id="DO9-w6-arJ"/>
+                        <outlet property="counterLabel" destination="ULd-dT-RtR" id="oyb-L0-le3"/>
+                        <outlet property="historyTextView" destination="9f2-S9-WmE" id="kgf-Mq-meT"/>
+                        <outlet property="minusButton" destination="Mvd-U5-O0b" id="hRl-Ek-h4I"/>
                         <outlet property="plusButton" destination="glK-3u-1Zo" id="Lcn-si-HCO"/>
                         <outlet property="resetButton" destination="VkD-WY-po4" id="hnJ-IA-sIi"/>
                     </connections>
